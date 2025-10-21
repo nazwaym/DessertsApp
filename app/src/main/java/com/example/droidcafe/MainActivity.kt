@@ -10,6 +10,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.droidcafe.databinding.ActivityMainBinding
+import android.content.Intent
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,9 +31,8 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .setAnchorView(R.id.fab).show()
+            val intent = Intent(this, OrderActivity::class.java)
+            startActivity(intent)
         }
     }
 
